@@ -10,6 +10,10 @@ app.factory('BookService', function($http, $q, API_BASE_URL) {
     getGenres: getGenres
   };
 
+  /**
+  * Gets the book list from the API
+  * @returns {object} A promise
+  */
   function getData() {
     var defer = $q.defer();
 
@@ -23,6 +27,10 @@ app.factory('BookService', function($http, $q, API_BASE_URL) {
     return defer.promise;
   }
 
+  /**
+  * Calls the API to add a book
+  * @returns {object} A promise
+  */
   function add(book) {
     var defer = $q.defer();
 
@@ -36,6 +44,10 @@ app.factory('BookService', function($http, $q, API_BASE_URL) {
     return defer.promise;
   }
 
+  /**
+  * Calls the API to update a book
+  * @returns {object} A promise
+  */
   function update(book) {
     var defer = $q.defer();
 
@@ -49,6 +61,10 @@ app.factory('BookService', function($http, $q, API_BASE_URL) {
     return defer.promise;
   }
 
+  /**
+  * Calls the API to remove a book
+  * @returns {object} A promise
+  */
   function remove(book_id) {
 
     var defer = $q.defer();
@@ -64,6 +80,10 @@ app.factory('BookService', function($http, $q, API_BASE_URL) {
 
   }
 
+  /**
+  * Gets the genre list from the API
+  * @returns {object} A promise
+  */
   function getGenres() {
 
     var defer = $q.defer();

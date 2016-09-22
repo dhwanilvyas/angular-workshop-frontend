@@ -4,6 +4,9 @@ app.controller('AddBookController', function($scope, $state, BookService) {
 
   getGenres();
 
+  /**
+  * Gets the genre list from the book service
+  */
   function getGenres() {
     BookService.getGenres().then(function(response) {
       $scope.genres = response;
@@ -12,6 +15,9 @@ app.controller('AddBookController', function($scope, $state, BookService) {
     });
   }
 
+  /**
+  * Call the book service to add a book
+  */
   $scope.add = function() {
     BookService.add($scope.book).then(function() {
       alert('Added!');
