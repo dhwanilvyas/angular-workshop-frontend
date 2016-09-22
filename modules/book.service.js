@@ -6,7 +6,8 @@ app.factory('BookService', function($http, $q, API_BASE_URL) {
     getData: getData,
     add: add,
     update: update,
-    remove: remove
+    remove: remove,
+    getGenres: getGenres
   };
 
   function getData() {
@@ -26,7 +27,6 @@ app.factory('BookService', function($http, $q, API_BASE_URL) {
     var defer = $q.defer();
 
     $http.post(API_BASE_URL + 'books', book).then(function(response) {
-      console.log(response);
       defer.resolve();
     }).catch(function(err) {
       defer.reject(err);
@@ -55,6 +55,21 @@ app.factory('BookService', function($http, $q, API_BASE_URL) {
 
     $http.delete(API_BASE_URL + 'books/' + book_id).then(function(response) {
       defer.resolve();
+    }).catch(function(err) {
+      defer.reject(err);
+      console.log(err);
+    });
+
+    return defer.promise;
+
+  }
+
+  function getGenres() {
+
+    var defer = $q.defer();
+
+    $http.get(API_BASE_URL + 'genres').then(function(response) {
+      defer.resolve(response.data);
     }).catch(function(err) {
       defer.reject(err);
       console.log(err);

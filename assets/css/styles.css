@@ -1,7 +1,15 @@
+body {
+  background-color: #FAFAFA;
+}
+
 .padding-top-container {
   padding-top: 150px;
 }
 
 .navbar {
   border-radius: 0;
+}
+
+.panel {
+  box-shadow: 0px 1px 1px grey;
 }

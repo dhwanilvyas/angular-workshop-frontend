@@ -10,7 +10,6 @@ app.controller('BookingCtrl', function($scope, BookService, $state) {
     }).catch(function(err) {
       console.log(err);
     });
-
   }
 
   $scope.remove = function(book) {

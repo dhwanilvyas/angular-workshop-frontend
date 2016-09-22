@@ -33,7 +33,10 @@ app.config(function($stateProvider, $urlRouterProvider) {
       templateUrl: '../../../templates/book-add.html',
       controller: 'UpdateBookController',
       controllerAs: 'vm',
-      params: {book: null}
+      params: {book: null},
+      onEnter: function($stateParams, $state) {
+        if (!$stateParams.book) $state.go('books.list');
+      }
     });
 
   $urlRouterProvider.otherwise('/');
