@@ -1,10 +1,11 @@
 var app = angular.module('BookStore', [
-  // Dependencies Injection
+  // Injecting dependencies
   'ui.bootstrap',
   'ui.router'
 ]);
 
-// Set the API base url
+// Constants are like global variables available throughout the application
+// Set the API base URL
 app.constant('API_BASE_URL', 'http://localhost:3000/api/');
 
 app.config(function($stateProvider, $urlRouterProvider) {
@@ -17,7 +18,8 @@ app.config(function($stateProvider, $urlRouterProvider) {
     })
     .state('books', {
       url: '/books',
-      templateUrl: 'templates/book.html'
+      templateUrl: 'templates/book.html',
+			abstract: true
     })
     .state('books.list', {
       url: '/list',

@@ -15,7 +15,8 @@ app.factory('BookService', function($http, $q, API_BASE_URL) {
   * @returns {object} A promise
   */
   function getData() {
-    var defer = $q.defer();
+
+		var defer = $q.defer();
 
     $http.get(API_BASE_URL + 'books').then(function(response) {
       defer.resolve(response.data);
@@ -32,7 +33,8 @@ app.factory('BookService', function($http, $q, API_BASE_URL) {
   * @returns {object} A promise
   */
   function add(book) {
-    var defer = $q.defer();
+
+		var defer = $q.defer();
 
     $http.post(API_BASE_URL + 'books', book).then(function(response) {
       defer.resolve();
@@ -49,7 +51,8 @@ app.factory('BookService', function($http, $q, API_BASE_URL) {
   * @returns {object} A promise
   */
   function update(book) {
-    var defer = $q.defer();
+
+		var defer = $q.defer();
 
     $http.put(API_BASE_URL + 'books/' + book._id, book).then(function(response) {
       defer.resolve();
