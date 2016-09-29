@@ -29,6 +29,16 @@ app.config(function($stateProvider, $urlRouterProvider) {
       templateUrl: 'templates/book-add.html',
       controller: 'AddBookController'
     })
+    .state('books.genre', {
+      url: '/genre',
+      templateUrl: 'templates/genre-add.html',
+      controller: 'GenreBookController'
+    })
+    .state('books.genreUpdate', {
+      url: '/genre-update',
+      templateUrl: 'templates/genre-update.html',
+      controller: 'UpdateGenreController'
+    })
     .state('books.update', {
       url: '/update',
       templateUrl: 'templates/book-add.html',

@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4">
+      <h3 class="text-center">Update Genre</h3>
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <form>
+            <div class="row" ng-repeat="genre in genres">
+              <div class="col-md-8">
+                <div class="form-group">
+                  <input class="form-control" ng-model="genre.name" value="{{genre.name}}">
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <button class="btn btn-success btn-block" ng-click="update(genre)">Update</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
