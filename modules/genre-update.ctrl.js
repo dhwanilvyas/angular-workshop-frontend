@@ -4,6 +4,9 @@ app.controller('UpdateGenreController', function($scope, $state, GenreService) {
 
   get();
 
+  /**
+  * Gets the genre list from the genre service
+  */
   function get() {
     GenreService.get().then(function(response) {
       $scope.genres = response;
@@ -12,7 +15,7 @@ app.controller('UpdateGenreController', function($scope, $state, GenreService) {
     });
   }
   /**
-  * Calls the book service to update a book
+  * Calls the genre service to update a genre
   */
   $scope.update = function(genre) {
     GenreService.update(genre).then(function() {

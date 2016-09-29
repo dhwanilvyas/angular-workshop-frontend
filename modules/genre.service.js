@@ -8,6 +8,9 @@ app.service('GenreService', function($http, $q, API_BASE_URL) {
     update: update
   };
 
+  /**
+  * Gets the book list from the api
+  */
   function get() {
     var defer = $q.defer();
 
@@ -21,6 +24,9 @@ app.service('GenreService', function($http, $q, API_BASE_URL) {
     return defer.promise;
   }
 
+  /**
+  * Calls the api to add genre
+  */
   function add(genre) {
     var defer = $q.defer();
 
@@ -34,6 +40,9 @@ app.service('GenreService', function($http, $q, API_BASE_URL) {
     return defer.promise;
   }
 
+  /**
+  * Calls the api to update genre
+  */
   function update(genre) {
     var defer = $q.defer();
 
