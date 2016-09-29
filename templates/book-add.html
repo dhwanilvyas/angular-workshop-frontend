@@ -10,11 +10,15 @@
             <label for='title'>Title</label>
             <input type='text' class='form-control input-sm' id='title' placeholder='Harry Potter' ng-model='book.title'>
           </div>
-          <div class='form-group'>
+          <div class='form-group' ng-if="!book._id">
             <label for='genre'>Genre</label>
             <select class='form-control input-sm' id='genre' ng-model='book.genre'>
               <option ng-repeat='genre in genres' value="{{genre.name}}">{{genre.name}}</option>
             </select>
+          </div>
+          <div class='form-group' ng-if="book._id">
+            <label for='genre'>Genre</label>
+            <input type='text' class='form-control input-sm' id='genre' placeholder='Fantasy.' ng-model='book.genre'>
           </div>
           <div class='form-group'>
             <label for='description'>Description</label>
