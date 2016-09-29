@@ -26,4 +26,16 @@ app.controller('UpdateGenreController', function($scope, $state, GenreService) {
     });
   }
 
+  /**
+  * Calls the genre service to delete a genre
+  */
+  $scope.delete = function(genre) {
+    GenreService.delete(genre).then(function() {
+      alert('Deleted!');
+      $state.go('books.list');
+    }).catch(function(err) {
+      console.log(err);
+    });
+  }
+
 });

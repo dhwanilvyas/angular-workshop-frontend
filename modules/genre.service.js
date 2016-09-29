@@ -5,7 +5,8 @@ app.service('GenreService', function($http, $q, API_BASE_URL) {
   return {
     get: get,
     add: add,
-    update: update
+    update: update,
+    delete: del
   };
 
   /**
@@ -47,6 +48,22 @@ app.service('GenreService', function($http, $q, API_BASE_URL) {
     var defer = $q.defer();
 
     $http.put(API_BASE_URL + 'genres/' + genre._id, genre).then(function(response) {
+      defer.resolve();
+    }).catch(function(err) {
+      console.log(err);
+      defer.reject(err);
+    });
+
+    return defer.promise;
+  }
+
+  /**
+  * Calls the api to delete genre
+  */
+  function del(genre) {
+    var defer = $q.defer();
+
+    $http.delete(API_BASE_URL + 'genres/' + genre._id).then(function(response) {
       defer.resolve();
     }).catch(function(err) {
       console.log(err);
